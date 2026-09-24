@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Rivera | Creative Developer & UI/UX Designer</title>
+    <title>Pradip Kalambe | E-Commerce Specialist & MBA Professional</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,958 +26,165 @@
                     },
                     colors: {
                         brand: {
-                            50: '#f0f5ff',
-                            100: '#e0ebff',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        },
-                        accent: {
-                            purple: '#8b5cf6',
-                            pink: '#ec4899',
-                            cyan: '#06b6d4'
-                        }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        },
-                        glow: {
-                            '0%': { filter: 'drop-shadow(0 0 15px rgba(59, 130, 246, 0.5))' },
-                            '100%': { filter: 'drop-shadow(0 0 30px rgba(139, 92, 246, 0.8))' }
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
                         }
                     }
                 }
             }
         }
     </script>
-
-    <!-- Custom inline CSS for specialized animations, scrollbars and canvas background -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Glassmorphism utility */
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(229, 231, 235, 0.5);
-        }
-
-        .dark .glass-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
-        }
-
-        /* Interactive skill bar animation styling */
-        .skill-progress {
-            transition: width 1.5s cubic-bezier(0.1, 0.5, 0.1, 1.0);
-        }
-
-        /* Typing cursor effect */
-        .cursor-blink::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 relative overflow-x-hidden selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
 
-    <!-- Interactive Background Canvas -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-40 dark:opacity-30"></canvas>
-
-    <!-- Navigation Header -->
-    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="glass rounded-2xl px-5 py-3 flex items-center justify-between shadow-lg shadow-slate-200/50 dark:shadow-none">
-                <!-- Brand Logo -->
-                <a href="#hero" class="flex items-center space-x-2 group">
-                    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-accent-purple to-accent-pink flex items-center justify-center text-white font-bold text-xl shadow-md transform group-hover:rotate-6 transition-transform">
-                        AR
-                    </span>
-                    <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                        Alex<span class="gradient-text">.dev</span>
-                    </span>
-                </a>
-
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#about" class="nav-link text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-500 transition-colors">About</a>
-                    <a href="#skills" class="nav-link text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-500 transition-colors">Skills</a>
-                    <a href="#projects" class="nav-link text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-500 transition-colors">Projects</a>
-                    <a href="#contact" class="nav-link text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-500 transition-colors">Contact</a>
-                </div>
-
-                <!-- Right Side Action Buttons -->
-                <div class="flex items-center space-x-4">
-                    <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle" aria-label="Toggle theme" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500">
-                        <i id="theme-icon" class="fas fa-moon text-lg"></i>
-                    </button>
-
-                    <!-- Contact Hire Button -->
-                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-accent-purple hover:from-brand-700 hover:to-accent-purple shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
-                        Hire Me
-                    </a>
-
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" aria-label="Open navigation menu" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                Pradip<span class="text-brand-600">.K</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600 dark:text-slate-300">
+                <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">About</a>
+                <a href="#experience" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Contact</a>
             </nav>
-        </div>
 
-        <!-- Mobile Drawer Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
-            <div class="glass rounded-2xl p-5 flex flex-col space-y-4 shadow-xl">
-                <a href="#about" class="mobile-nav-link text-slate-700 dark:text-slate-200 font-medium py-2 border-b border-slate-200/50 dark:border-slate-800">About</a>
-                <a href="#skills" class="mobile-nav-link text-slate-700 dark:text-slate-200 font-medium py-2 border-b border-slate-200/50 dark:border-slate-800">Skills</a>
-                <a href="#projects" class="mobile-nav-link text-slate-700 dark:text-slate-200 font-medium py-2 border-b border-slate-200/50 dark:border-slate-800">Projects</a>
-                <a href="#contact" class="mobile-nav-link text-slate-700 dark:text-slate-200 font-medium py-2">Contact</a>
-                <a href="#contact" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-accent-purple text-center">
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-sm transition-all hover:shadow hover:-translate-y-0.5">
                     Get in Touch
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="relative z-10 pt-24">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 dark:bg-brand-900/40 border border-brand-100 dark:border-brand-800 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    E-Commerce Professional & MBA Specialist
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Pradip Kalambe</span>
+                </h1>
+                
+                <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                    Driven MBA graduate specializing in E-Commerce Operations, digital market strategy, and supply chain coordination. Currently managing business processes and market expansion initiatives at <strong class="text-slate-900 dark:text-white">Jindal Texofab</strong>.
+                </p>
 
-        <!-- Hero Section -->
-        <section id="hero" class="min-h-[90vh] flex items-center justify-center relative py-12 lg:py-20">
-            <!-- Decorative Glow Background Orbs -->
-            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-brand-500/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-purple/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Text Content -->
-                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-                        <!-- Status Badge -->
-                        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 -ml-5"></span>
-                            <span>Available for freelance & full-time roles</span>
-                        </div>
-
-                        <!-- Main Heading with Typing Effect -->
-                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-                            Hi, I'm <span class="gradient-text">Alex Rivera</span>
-                            <br>
-                            <span id="typing-text" class="text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-700 dark:text-slate-300 cursor-blink"></span>
-                        </h1>
-
-                        <!-- Subtitle -->
-                        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                            I craft visually stunning, responsive, and high-performance web applications using modern web technologies. Transforming ideas into seamless digital experiences.
-                        </p>
-
-                        <!-- Call to Actions -->
-                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                            <a href="#projects" class="px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 via-accent-purple to-accent-pink hover:opacity-95 shadow-lg shadow-brand-500/25 transform hover:-translate-y-1 transition-all flex items-center space-x-2">
-                                <span>Explore My Work</span>
-                                <i class="fas fa-arrow-right text-sm"></i>
-                            </a>
-                            <a href="#contact" class="px-7 py-3.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 glass hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-all border border-slate-300 dark:border-slate-700 shadow-sm flex items-center space-x-2">
-                                <i class="fas fa-envelope text-brand-500"></i>
-                                <span>Let's Talk</span>
-                            </a>
-                        </div>
-
-                        <!-- Social Quick Links -->
-                        <div class="pt-6 flex items-center justify-center lg:justify-start space-x-5 text-slate-500 dark:text-slate-400">
-                            <span class="text-xs uppercase tracking-wider font-bold">Follow:</span>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="p-2.5 rounded-xl glass hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition-all">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="p-2.5 rounded-xl glass hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition-all">
-                                <i class="fab fa-linkedin text-xl"></i>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" class="p-2.5 rounded-xl glass hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition-all">
-                                <i class="fab fa-x-twitter text-xl"></i>
-                            </a>
-                            <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" aria-label="Dribbble Portfolio" class="p-2.5 rounded-xl glass hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition-all">
-                                <i class="fab fa-dribbble text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Hero Visual Card / Avatar -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative w-72 h-72 sm:w-88 sm:h-88 lg:w-96 lg:h-96 group">
-                            <!-- Animated Outline Aura -->
-                            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-600 via-accent-purple to-accent-pink blur-lg opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-float"></div>
-                            
-                            <!-- Avatar Card Container -->
-                            <div class="relative w-full h-full rounded-3xl bg-slate-900 border border-slate-700/50 p-4 flex flex-col justify-between overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
-                                     alt="Alex Rivera Profile" 
-                                     class="w-full h-full object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
-                                     onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Alex+Rivera'">
-                                
-                                <!-- Overlay Card Stat -->
-                                <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass border border-white/20 dark:border-slate-700/50 shadow-lg flex items-center justify-between">
-                                    <div class="flex items-center space-x-3">
-                                        <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-500 flex items-center justify-center font-bold text-lg">
-                                            🚀
-                                        </div>
-                                        <div>
-                                            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Experience</p>
-                                            <p class="text-sm font-bold text-slate-900 dark:text-white">5+ Years Building Web Apps</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Contact Me
+                    </a>
+                    <a href="#experience" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                        View Career History
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Discover My Journey</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">About <span class="gradient-text">Me</span></h2>
-                    <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-accent-purple mx-auto rounded-full"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <!-- Bio Text -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
-                            Passionate Full-Stack Developer with a keen eye for Design Excellence.
-                        </h3>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Hello! I'm Alex, a software engineer and UI designer based in California. I specialize in crafting full-stack web applications using JavaScript, React, Node.js, and modern CSS frameworks like Tailwind. 
-                        </p>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            My journey began over five years ago when I first edited code in VS Code to build custom widgets. Today, I've had the privilege of collaborating with dynamic startups, design agencies, and global clients to bring creative concepts to life.
-                        </p>
-
-                        <!-- Key Highlights Grid -->
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
-                            <div class="p-4 rounded-2xl glass-card text-center">
-                                <span class="block text-3xl font-extrabold gradient-text">50+</span>
-                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 block">Projects Delivered</span>
-                            </div>
-                            <div class="p-4 rounded-2xl glass-card text-center">
-                                <span class="block text-3xl font-extrabold gradient-text">99.9%</span>
-                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 block">Satisfaction Rate</span>
-                            </div>
-                            <div class="p-4 rounded-2xl glass-card text-center col-span-2 sm:col-span-1">
-                                <span class="block text-3xl font-extrabold gradient-text">5+</span>
-                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 block">Years Experience</span>
-                            </div>
-                        </div>
-
-                        <!-- Resume CTA -->
-                        <div class="pt-4">
-                            <a href="#" onclick="alert('Demo: Downloading Resume PDF...'); return false;" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-semibold hover:opacity-90 transition-all shadow-md">
-                                <i class="fas fa-download text-sm"></i>
-                                <span>Download Resume</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Experience Timeline -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="p-6 rounded-3xl glass-card shadow-xl border border-slate-200/50 dark:border-slate-800">
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center space-x-2">
-                                <i class="fas fa-briefcase text-brand-500"></i>
-                                <span>Experience & Milestones</span>
-                            </h4>
-
-                            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-8">
-                                <!-- Milestone 1 -->
-                                <div class="relative pl-6 group">
-                                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-100 dark:ring-slate-900 group-hover:scale-125 transition-transform"></span>
-                                    <span class="text-xs font-semibold text-brand-600 dark:text-brand-400">2022 - PRESENT</span>
-                                    <h5 class="text-base font-bold text-slate-900 dark:text-white mt-1">Senior Full Stack Developer</h5>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">TechPulse Solutions Inc.</p>
-                                </div>
-
-                                <!-- Milestone 2 -->
-                                <div class="relative pl-6 group">
-                                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent-purple ring-4 ring-slate-100 dark:ring-slate-900 group-hover:scale-125 transition-transform"></span>
-                                    <span class="text-xs font-semibold text-accent-purple">2020 - 2022</span>
-                                    <h5 class="text-base font-bold text-slate-900 dark:text-white mt-1">Frontend UI/UX Specialist</h5>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">Creative Flow Studio</p>
-                                </div>
-
-                                <!-- Milestone 3 -->
-                                <div class="relative pl-6 group">
-                                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent-pink ring-4 ring-slate-100 dark:ring-slate-900 group-hover:scale-125 transition-transform"></span>
-                                    <span class="text-xs font-semibold text-accent-pink">2019 - 2020</span>
-                                    <h5 class="text-base font-bold text-slate-900 dark:text-white mt-1">Junior Web Developer</h5>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">Apex Digital Labs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-brand-600 to-indigo-500 blur-2xl opacity-30 transform rotate-6"></div>
+                    <img src="profile.png" alt="Pradip Kalambe" class="relative w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white dark:border-slate-800">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Technical Expertise</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">My <span class="gradient-text">Skills</span></h2>
-                    <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-accent-purple mx-auto rounded-full"></div>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white dark:bg-slate-800/50 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Professional Experience</h2>
+                <p class="mt-3 text-slate-600 dark:text-slate-400">Combining academic excellence in MBA with hands-on industrial execution.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Current Role -->
+                <div class="relative pl-8 border-l-2 border-brand-500 space-y-2">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-500 border-4 border-white dark:border-slate-900"></div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Present Role</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">E-Commerce Specialist</h3>
+                    <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Jindal Texofab</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed pt-2">
+                        Overseeing online marketplace listing management, digital customer growth, order fulfillment, and strategic operations to expand brand reach across major digital platforms.
+                    </p>
                 </div>
 
-                <!-- Skill Categories Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Skill Card: Frontend -->
-                    <div class="p-6 rounded-3xl glass-card shadow-lg hover:shadow-xl transition-shadow border border-slate-200/60 dark:border-slate-800">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-3 rounded-2xl bg-brand-500/10 text-brand-500 text-xl font-bold">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Frontend Development</h3>
-                        </div>
-
-                        <div class="space-y-4">
-                            <!-- Skill item -->
-                            <div>
-                                <div class="flex justify-between text-sm font-medium mb-1">
-                                    <span class="text-slate-700 dark:text-slate-200">React.js / Next.js</span>
-                                    <span class="text-brand-500 font-bold">92%</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
-                                    <div class="skill-progress h-full bg-gradient-to-r from-brand-500 to-accent-purple rounded-full" style="width: 0%" data-width="92%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill item -->
-                            <div>
-                                <div class="flex justify-between text-sm font-medium mb-1">
-                                    <span class="text-slate-700 dark:text-slate-200">TypeScript / JavaScript</span>
-                                    <span class="text-brand-500 font-bold">90%</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
-                                    <div class="skill-progress h-full bg-gradient-to-r from-brand-500 to-accent-purple rounded-full" style="width: 0%" data-width="90%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill item -->
-                            <div>
-                                <div class="flex justify-between text-sm font-medium mb-1">
-                                    <span class="text-slate-700 dark:text-slate-200">Tailwind CSS / HTML5</span>
-                                    <span class="text-brand-500 font-bold">95%</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
-                                    <div class="skill-progress h-full bg-gradient-to-r from-brand-500 to-accent-purple rounded-full" style="width: 0%" data-width="95%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Skill Card: Backend -->
-                    <div class="p-6 rounded-3xl glass-card shadow-lg hover:shadow-xl transition-shadow border border-slate-200/60 dark:border-slate-800">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-3 rounded-2xl bg-accent-purple/10 text-accent-purple text-xl font-bold">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend & APIs</h3>
-                        </div>
-
-                        <div class="space-y-4">
-                            <!-- Skill item -->
-                            <div>
-                                <div class="flex justify-between text-sm font-medium mb-1">
-                                    <span class="text-slate-700 dark:text-slate-200">Node.js / Express</span>
-                                    <span class="text-accent-purple font-bold">85%</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
-                                    <div class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full" style="width: 0%" data-width="85%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill item -->
-                            <div>
-                                <div class="flex justify-between text-sm font-medium mb-1">
-                                    <span class="text-slate-700 dark:text-slate-200">PostgreSQL / MongoDB</span>
-                                    <span class="text-accent-purple font-bold">80%</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
-                                    <div class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full" style="width: 0%" data-width="80%"></div>
-                                </div>
-                            </div>
-                            <!-- Skill item -->
-                            <div>
-                                <div class="flex justify-between text-sm font-medium mb-1">
-                                    <span class="text-slate-700 dark:text-slate-200">REST & GraphQL APIs</span>
-                                    <span class="text-accent-purple font-bold">88%</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
-                                    <div class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full" style="width: 0%" data-width="88%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Skill Card: Tools & Design -->
-                    <div class="p-6 rounded-3xl glass-card shadow-lg hover:shadow-xl transition-shadow border border-slate-200/60 dark:border-slate-800 md:col-span-2 lg:col-span-1">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-3 rounded-2xl bg-accent-pink/10 text-accent-pink text-xl font-bold">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Tools & Workflow</h3>
-                        </div>
-
-                        <!-- Skill Tags -->
-                        <div class="flex flex-wrap gap-2.5 pt-2">
-                            <span class="px-3.5 py-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform flex items-center gap-2">
-                                <i class="fab fa-git-alt text-orange-500 text-sm"></i> Git & GitHub
-                            </span>
-                            <span class="px-3.5 py-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform flex items-center gap-2">
-                                <i class="fab fa-figma text-pink-500 text-sm"></i> Figma
-                            </span>
-                            <span class="px-3.5 py-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform flex items-center gap-2">
-                                <i class="fab fa-docker text-blue-500 text-sm"></i> Docker
-                            </span>
-                            <span class="px-3.5 py-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform flex items-center gap-2">
-                                <i class="fas fa-bolt text-yellow-500 text-sm"></i> Vite / Webpack
-                            </span>
-                            <span class="px-3.5 py-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform flex items-center gap-2">
-                                <i class="fas fa-vial text-emerald-500 text-sm"></i> Jest / Testing
-                            </span>
-                            <span class="px-3.5 py-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform flex items-center gap-2">
-                                <i class="fab fa-aws text-yellow-600 text-sm"></i> AWS / Vercel
-                            </span>
-                        </div>
-                    </div>
-
+                <!-- Education -->
+                <div class="relative pl-8 border-l-2 border-slate-300 dark:border-slate-700 space-y-2">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-white dark:border-slate-900"></div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Education</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Master of Business Administration (MBA)</h3>
+                    <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Specialization in Marketing & Business Strategy</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed pt-2">
+                        Gained advanced insights into consumer behavior, digital business models, financial management, and operational efficiency.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Featured Works</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Interactive <span class="gradient-text">Projects</span></h2>
-                    <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-accent-purple mx-auto rounded-full"></div>
-                </div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Core Competencies</h2>
+            <p class="mt-3 text-slate-600 dark:text-slate-400">Key strengths driving digital business growth and operational precision.</p>
+        </div>
 
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-                    <button class="filter-btn active px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand-600 text-white shadow-md" data-filter="all">
-                        All Projects
-                    </button>
-                    <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" data-filter="fullstack">
-                        Full Stack
-                    </button>
-                    <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" data-filter="frontend">
-                        Frontend
-                    </button>
-                    <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" data-filter="ui">
-                        Mobile / UI
-                    </button>
-                </div>
-
-                <!-- Projects Grid -->
-                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project Item 1 -->
-                    <div class="project-card group glass-card rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-md hover:shadow-2xl transition-all duration-300" data-category="fullstack">
-                        <div class="relative overflow-hidden aspect-video">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
-                                 alt="Analytics Dashboard" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=SaaS+Dashboard'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                <span class="text-xs font-semibold text-white bg-brand-600/90 px-3 py-1 rounded-lg backdrop-blur-sm">Full Stack App</span>
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Nexus Analytics SaaS</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
-                                Real-time business intelligence dashboard with custom chart visualizations, user authentication, and export tools.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">React</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Node.js</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Tailwind</span>
-                            </div>
-                            <div class="pt-2 flex items-center justify-between border-t border-slate-200/50 dark:border-slate-800">
-                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-500 flex items-center space-x-1">
-                                    <i class="fab fa-github"></i>
-                                    <span>Source</span>
-                                </a>
-                                <button onclick="openProjectModal('Nexus Analytics SaaS', 'Full Stack SaaS analytics dashboard providing customizable metrics, database integration and live chart widgets.', 'React, Node.js, Express, MongoDB, Chart.js', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800')" class="text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center space-x-1">
-                                    <span>View Details</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Item 2 -->
-                    <div class="project-card group glass-card rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-md hover:shadow-2xl transition-all duration-300" data-category="frontend">
-                        <div class="relative overflow-hidden aspect-video">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" 
-                                 alt="E-Commerce Platform" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=E-Commerce'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                <span class="text-xs font-semibold text-white bg-accent-purple/90 px-3 py-1 rounded-lg backdrop-blur-sm">Frontend Web</span>
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Aura Luxury Store</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
-                                E-commerce storefront experience with dynamic shopping cart, product filter, and lightning-fast page loading.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Next.js</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">TypeScript</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Stripe</span>
-                            </div>
-                            <div class="pt-2 flex items-center justify-between border-t border-slate-200/50 dark:border-slate-800">
-                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-500 flex items-center space-x-1">
-                                    <i class="fab fa-github"></i>
-                                    <span>Source</span>
-                                </a>
-                                <button onclick="openProjectModal('Aura Luxury Store', 'High-performance luxury e-commerce web storefront featuring responsive design, Stripe API integration and seamless UI state management.', 'Next.js, TypeScript, Tailwind CSS, Stripe', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800')" class="text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center space-x-1">
-                                    <span>View Details</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Item 3 -->
-                    <div class="project-card group glass-card rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-md hover:shadow-2xl transition-all duration-300" data-category="ui">
-                        <div class="relative overflow-hidden aspect-video">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" 
-                                 alt="Mobile App Interface" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                 onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Mobile+App'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                <span class="text-xs font-semibold text-white bg-accent-pink/90 px-3 py-1 rounded-lg backdrop-blur-sm">Mobile UI/UX</span>
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Pulse Fitness Mobile</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
-                                Cross-platform mobile workout tracker design featuring haptic feedback animations and activity goal widgets.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">React Native</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Figma</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800">Redux</span>
-                            </div>
-                            <div class="pt-2 flex items-center justify-between border-t border-slate-200/50 dark:border-slate-800">
-                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-500 flex items-center space-x-1">
-                                    <i class="fab fa-github"></i>
-                                    <span>Source</span>
-                                </a>
-                                <button onclick="openProjectModal('Pulse Fitness Mobile', 'Modern mobile health ecosystem design and implementation focus on sleek layout micro-interactions.', 'React Native, Expo, Figma, Tailwind', 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800')" class="text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center space-x-1">
-                                    <span>View Details</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                <i class="fa-solid fa-cart-shopping text-3xl text-brand-600 mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">E-Commerce Strategy</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Marketplace optimization, product cataloging, pricing strategy, and seller portal management.</p>
             </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Get In Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Let's Work <span class="gradient-text">Together</span></h2>
-                    <div class="w-16 h-1 bg-gradient-to-r from-brand-600 to-accent-purple mx-auto rounded-full"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    
-                    <!-- Contact Info Panel -->
-                    <div class="lg:col-span-5 space-y-8">
-                        <div class="p-8 rounded-3xl glass-card border border-slate-200/80 dark:border-slate-800 space-y-6">
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Contact Information</h3>
-                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                                Have a project idea, question, or looking for a talented developer to join your team? Feel free to send me a message!
-                            </p>
-
-                            <div class="space-y-4 pt-2">
-                                <div class="flex items-center space-x-4 p-3.5 rounded-2xl bg-white/50 dark:bg-slate-800/50">
-                                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold shrink-0">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400 font-medium block">Email Me</span>
-                                        <a href="mailto:alex.rivera@example.com" class="text-sm font-bold text-slate-900 dark:text-white hover:text-brand-500 transition-colors">alex.rivera@example.com</a>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center space-x-4 p-3.5 rounded-2xl bg-white/50 dark:bg-slate-800/50">
-                                    <div class="w-12 h-12 rounded-xl bg-accent-purple/10 text-accent-purple flex items-center justify-center text-xl font-bold shrink-0">
-                                        <i class="fas fa-location-dot"></i>
-                                    </div>
-                                    <div>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400 font-medium block">Location</span>
-                                        <span class="text-sm font-bold text-slate-900 dark:text-white">San Francisco, CA (Remote)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="lg:col-span-7">
-                        <form id="contact-form" class="p-8 rounded-3xl glass-card border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-xl">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-2">Your Name</label>
-                                    <input type="text" id="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-2">Your Email</label>
-                                    <input type="email" id="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="subject" class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-2">Subject</label>
-                                <input type="text" id="subject" required placeholder="Project Inquiry / Job Opportunity" class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-2">Message</label>
-                                <textarea id="message" rows="4" required placeholder="Tell me about your project..." class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"></textarea>
-                            </div>
-
-                            <!-- Success Banner (Hidden by default) -->
-                            <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs sm:text-sm font-semibold flex items-center space-x-2">
-                                <i class="fas fa-circle-check text-lg"></i>
-                                <span>Thank you! Your message has been sent successfully. I will get back to you shortly.</span>
-                            </div>
-
-                            <button type="submit" class="w-full py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-brand-600 via-accent-purple to-accent-pink hover:opacity-95 shadow-lg shadow-brand-500/20 transform hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane text-xs"></i>
-                            </button>
-                        </form>
-                    </div>
-
-                </div>
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                <i class="fa-solid fa-chart-line text-3xl text-brand-600 mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Business Analytics</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Sales performance tracking, market research, forecasting, and conversion rate enhancement.</p>
             </div>
-        </section>
 
-    </main>
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                <i class="fa-solid fa-truck-ramp-box text-3xl text-brand-600 mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Supply Chain & Operations</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Inventory control, order processing, vendor communication, and logistics management.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                <i class="fa-solid fa-briefcase text-3xl text-brand-600 mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Corporate Management</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Client relationship management, team leadership, strategic planning, and brand execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <h2 class="text-3xl sm:text-4xl font-bold">Let's Connect & Collaborate</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">
+                Open to corporate opportunities, consultancy, and strategic e-commerce growth partnerships.
+            </p>
+            <div class="inline-flex items-center gap-3 bg-slate-800/80 px-6 py-4 rounded-2xl border border-slate-700">
+                <i class="fa-solid fa-envelope text-brand-500 text-xl"></i>
+                <span class="text-lg font-medium text-slate-200">Pradip Kalambe</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-slate-200/80 dark:border-slate-800 relative z-10 bg-slate-50 dark:bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 text-center sm:text-left">
-                © 2026 Alex Rivera. Built with HTML, Tailwind CSS & JavaScript. Ready to publish!
-            </p>
-            <div class="flex items-center space-x-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                <a href="#hero" class="hover:text-brand-500 transition-colors">Back to Top ↑</a>
-            </div>
-        </div>
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>© 2026 Pradip Kalambe. All rights reserved.</p>
     </footer>
 
-    <!-- Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 border border-slate-200 dark:border-slate-800 shadow-2xl relative transform scale-95 transition-transform duration-300">
-            <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                <i class="fas fa-xmark text-xl"></i>
-            </button>
-
-            <img id="modal-img" src="" alt="Project Preview" class="w-full h-48 object-cover rounded-2xl">
-            <div>
-                <h3 id="modal-title" class="text-2xl font-bold text-slate-900 dark:text-white"></h3>
-                <p id="modal-desc" class="text-slate-600 dark:text-slate-300 text-sm mt-2 leading-relaxed"></p>
-            </div>
-            
-            <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Tech Stack</span>
-                <p id="modal-stack" class="text-xs font-semibold text-brand-600 dark:text-brand-400"></p>
-            </div>
-
-            <div class="flex justify-end space-x-3 pt-2">
-                <button onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main JavaScript Logic -->
-    <script>
-        // --- 1. Theme Dark/Light Toggle ---
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-
-        // Check stored theme or preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            document.documentElement.classList.remove('dark');
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            }
-        });
-
-        // --- 2. Dynamic Typing Text Effect ---
-        const phrases = ["Full-Stack Engineer", "UI/UX Designer", "Creative Problem Solver"];
-        let phraseIdx = 0;
-        let charIdx = 0;
-        let isDeleting = false;
-        const typingSpeed = 100;
-        const typingElement = document.getElementById("typing-text");
-
-        function typeEffect() {
-            const currentPhrase = phrases[phraseIdx];
-            if (isDeleting) {
-                typingElement.textContent = currentPhrase.substring(0, charIdx - 1);
-                charIdx--;
-            } else {
-                typingElement.textContent = currentPhrase.substring(0, charIdx + 1);
-                charIdx++;
-            }
-
-            if (!isDeleting && charIdx === currentPhrase.length) {
-                isDeleting = true;
-                setTimeout(typeEffect, 2000);
-            } else if (isDeleting && charIdx === 0) {
-                isDeleting = false;
-                phraseIdx = (phraseIdx + 1) % phrases.length;
-                setTimeout(typeEffect, 500);
-            } else {
-                setTimeout(typeEffect, isDeleting ? typingSpeed / 2 : typingSpeed);
-            }
-        }
-        document.addEventListener("DOMContentLoaded", typeEffect);
-
-        // --- 3. Mobile Navigation Menu Toggle ---
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // --- 4. Interactive Project Filter Tabs ---
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-brand-600', 'text-white');
-                    b.classList.add('text-slate-600', 'dark:text-slate-300');
-                });
-                btn.classList.add('active', 'bg-brand-600', 'text-white');
-
-                const filter = btn.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // --- 5. Modal Popup Logic ---
-        const modal = document.getElementById('project-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalStack = document.getElementById('modal-stack');
-        const modalImg = document.getElementById('modal-img');
-
-        function openProjectModal(title, desc, stack, imgUrl) {
-            modalTitle.textContent = title;
-            modalDesc.textContent = desc;
-            modalStack.textContent = stack;
-            modalImg.src = imgUrl;
-
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-            }, 10);
-        }
-
-        function closeProjectModal() {
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        // --- 6. Scroll Animate Progress Bars ---
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const animateSkills = () => {
-            skillBars.forEach(bar => {
-                const rect = bar.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                    bar.style.width = bar.getAttribute('data-width');
-                }
-            });
-        };
-        window.addEventListener('scroll', animateSkills);
-        animateSkills(); // Initial check
-
-        // --- 7. Contact Form Interactive Handler ---
-        const contactForm = document.getElementById('contact-form');
-        const formSuccess = document.getElementById('form-success');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            formSuccess.classList.remove('hidden');
-            contactForm.reset();
-            setTimeout(() => {
-                formSuccess.classList.add('hidden');
-            }, 5000);
-        });
-
-        // --- 8. Background Particle Canvas Interactive Effect ---
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-            draw() {
-                ctx.fillStyle = '#3b82f6';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            const count = Math.floor(window.innerWidth / 20);
-            for (let i = 0; i < count; i++) {
-                particles.push(new Particle());
-            }
-        }
-        initParticles();
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-    </script>
 </body>
 </html>
